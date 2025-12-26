@@ -1,4 +1,6 @@
 <head>
+  {{/* Increment this version when making CSS changes to bust CDN cache */}}
+  {{ $cssVersion := "2" }}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +17,7 @@
 
   <link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
   <link href="{{ "assets/css/highlight.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
-  <link href="{{ "theme-v2.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "theme.css" | relURL }}?v={{ $cssVersion }}" rel="stylesheet">
 
 	{{ partial "microblog_head.html" . }}
 </head>
