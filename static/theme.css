@@ -243,14 +243,20 @@ nav.main-nav a:has(i):hover {
 	}
 
 	textarea,
-	input {
-		background-color: var(--input);
-		color: var(--body);
-		border-color: #2A2826;
+	input,
+	input[type="text"],
+	input[type="email"],
+	input[type="search"] {
+		background-color: var(--input) !important;
+		color: var(--body) !important;
+		border: 2px solid #3D3835 !important;
 	}
 
 	textarea:focus,
-	input:focus {
-		border-color: var(--primary);
+	input:focus,
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="search"]:focus {
+		border-color: var(--primary) !important;
 	}
 }
