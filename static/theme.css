@@ -246,7 +246,7 @@ nav.main-nav a:has(i):hover {
 	input {
 		background-color: var(--input);
 		color: var(--body);
-		border-color: #363230;
+		border-color: #2A2826;
 	}
 
 	textarea:focus,
