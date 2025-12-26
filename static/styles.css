@@ -1,12 +1,13 @@
 :root {
-    --primary: #C3512F;
-    --primary-hover: rgba(220, 81, 47, 1);
-    --primary-active: #883d1f;
+	--primary: #C3512F;
+	--primary-hover: rgba(220, 81, 47, 1);
+	--primary-active: #883d1f;
 	--background: #F8F8F7;
 	--headings: #292524;
 	--body: #3d3835;
 	--secondary: #ABA39B;
-	--input: #E6E6E6;
+	--input-bg: #FFFFFF;
+	--input-border: #E6E6E6;
 	--border: #EEE;
 }
 
@@ -65,24 +66,26 @@ p a:hover {
 /* Inputs */
 textarea,
 input {
-    min-height: 48px;
-    border-radius: .5rem !important;
-    border: 2px solid var(--input);
-    padding: .5em 1em;
-    font-size: 1em !important;
-    appearance: none;
-    -webkit-appearance: none;
+	min-height: 48px;
+	border-radius: .5rem;
+	background-color: var(--input-bg);
+	color: var(--body);
+	border: 2px solid var(--input-border);
+	padding: .5em 1em;
+	font-size: 1em;
+	appearance: none;
+	-webkit-appearance: none;
 	-moz-appearance: none;
 	box-sizing: border-box;
-    font-family: inherit;
+	font-family: inherit;
 	margin-top: 1em;
 	width: 100%;
-    transition: all .2s ease;
-	outline: none !important;
+	transition: all .2s ease;
+	outline: none;
 }
 textarea:focus,
 input:focus {
-    border: 2px solid var(--primary);	
+	border-color: var(--primary);
 }
 input[type="submit"]:not(:disabled) {
 	cursor: pointer;
@@ -231,7 +234,8 @@ nav.main-nav a:has(i):hover {
 		--headings: #F5F5F4;
 		--body: #D6D3D1;
 		--secondary: #78716C;
-		--input: #252322;
+		--input-bg: #252322;
+		--input-border: #4A4543;
 		--border: #332F2D;
 	}
 
@@ -240,37 +244,5 @@ nav.main-nav a:has(i):hover {
 	#post-nav a:hover,
 	p a:hover {
 		color: var(--background);
-	}
-
-	textarea,
-	input:not([type="submit"]),
-	input[type="text"],
-	input[type="email"],
-	input[type="search"],
-	input.field,
-	#input_search {
-		background-color: var(--input) !important;
-		color: var(--body) !important;
-		border: 2px solid #4A4543 !important;
-	}
-
-	input[type="submit"]:not(:disabled) {
-		background-color: var(--primary) !important;
-		color: white !important;
-		border: none !important;
-	}
-
-	input[type="submit"]:not(:disabled):hover {
-		background-color: var(--primary-hover) !important;
-	}
-
-	textarea:focus,
-	input:focus,
-	input[type="text"]:focus,
-	input[type="email"]:focus,
-	input[type="search"]:focus,
-	input.field:focus,
-	#input_search:focus {
-		border-color: var(--primary) !important;
 	}
 }
