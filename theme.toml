@@ -1,1 +1,4 @@
-
+[extra]
+  name = "Alfredo Blog Theme"
+  description = "Custom theme for alfredo.blog"
+  min_version = "0.91"
