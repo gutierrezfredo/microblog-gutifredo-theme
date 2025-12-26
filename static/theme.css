@@ -243,7 +243,7 @@ nav.main-nav a:has(i):hover {
 	}
 
 	textarea,
-	input,
+	input:not([type="submit"]),
 	input[type="text"],
 	input[type="email"],
 	input[type="search"],
@@ -252,6 +252,16 @@ nav.main-nav a:has(i):hover {
 		background-color: var(--input) !important;
 		color: var(--body) !important;
 		border: 2px solid #3D3835 !important;
+	}
+
+	input[type="submit"]:not(:disabled) {
+		background-color: var(--primary) !important;
+		color: white !important;
+		border: none !important;
+	}
+
+	input[type="submit"]:not(:disabled):hover {
+		background-color: var(--primary-hover) !important;
 	}
 
 	textarea:focus,
