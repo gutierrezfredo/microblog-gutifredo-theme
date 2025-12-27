@@ -320,5 +320,13 @@ article + article {
 [data-theme="dark"] #footer a:hover,
 [data-theme="dark"] #post-nav a:hover,
 [data-theme="dark"] p a:hover {
-	color: var(--background);
+	color: inherit;
+}
+
+[data-theme="dark"] nav.main-nav a:hover {
+	color: var(--body);
+}
+
+[data-theme="dark"] .social-media a:hover {
+	color: var(--body) !important;
 }
