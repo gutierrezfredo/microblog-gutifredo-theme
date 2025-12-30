@@ -258,6 +258,11 @@ nav.main-nav a:has(i):hover {
 	color: var(--primary);
     font-size: 24px;
 }
+@media (min-width: 769px) {
+    .social-media a {
+        font-size: 28px;
+    }
+}
 .social-media a:hover {
 	color: var(--primary-hover) !important;
 }
