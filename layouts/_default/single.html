@@ -1,6 +1,11 @@
 {{ define "main" }}
+{{/* Hidden pages - redirect to homepage */}}
+{{ if eq .RelPermalink "/intro/" }}
+<script>window.location.replace('/');</script>
+<noscript><meta http-equiv="refresh" content="0;url=/"></noscript>
+
 {{/* Blogs page - show posts with "blogs" category */}}
-{{ if eq .RelPermalink "/blogs/" }}
+{{ else if eq .RelPermalink "/blogs/" }}
 <article class="h-entry post">
   <header>
     <h1 class="p-name">{{ .Title }}</h1>

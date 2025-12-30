@@ -1,10 +1,27 @@
 <div class="profile">
   <section id="wrapper">
+    {{ $intro := .Site.GetPage "/intro" }}
+    {{ with $intro }}
+    <header class="h-card">
+      {{ $content := .RawContent }}
+      {{ $lines := split $content "\n" }}
+      {{ range $lines }}
+        {{ if hasPrefix . "![" }}
+          <a class="u-url" href="/about/">{{ . | markdownify }}</a>
+        {{ else if hasPrefix . "<h1>" }}
+          <h1 class="p-name" rel="me">{{ . | safeHTML }}</h1>
+        {{ else if hasPrefix . "# " }}
+          <h1 class="p-name" rel="me">{{ strings.TrimPrefix "# " . }}</h1>
+        {{ end }}
+      {{ end }}
+    </header>
+    {{ else }}
     <header class="h-card">
       <a class="u-url" href="/about/">
         <img id="avatar" class="u-photo" src="{{ .Site.Params.author.avatar }}" width="96" height="96" />
       </a>
       <h1 class="p-name" rel="me">{{ .Site.Params.author.name }}</h1>
     </header>
+    {{ end }}
   </section>
 </div>
