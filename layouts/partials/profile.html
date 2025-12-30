@@ -6,12 +6,13 @@
       {{ $content := .RawContent }}
       {{ $lines := split $content "\n" }}
       {{ range $lines }}
-        {{ if hasPrefix . "![" }}
-          <a class="u-url" href="/about/">{{ . | markdownify }}</a>
-        {{ else if hasPrefix . "<h1>" }}
-          <h1 class="p-name" rel="me">{{ . | safeHTML }}</h1>
-        {{ else if hasPrefix . "# " }}
-          <h1 class="p-name" rel="me">{{ strings.TrimPrefix "# " . }}</h1>
+        {{ $line := . | strings.TrimSpace }}
+        {{ if hasPrefix $line "![" }}
+          <a class="u-url" href="/about/">{{ $line | markdownify }}</a>
+        {{ else if hasPrefix $line "<h1>" }}
+          <h1 class="p-name" rel="me">{{ $line | safeHTML }}</h1>
+        {{ else if hasPrefix $line "# " }}
+          <h1 class="p-name" rel="me">{{ strings.TrimPrefix "# " $line }}</h1>
         {{ end }}
       {{ end }}
     </header>
